@@ -1,0 +1,45 @@
+/* Installed and locked locally: PDF generation needs no Google Fonts request. */
+@import '../node_modules/@fontsource/noto-serif-jp/400.css';
+@import '../node_modules/@fontsource/noto-serif-jp/700.css';
+
+@page {
+  size: 105mm 148mm;
+  margin: 14mm 12mm 16mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 8pt;
+    writing-mode: horizontal-tb;
+  }
+}
+html {
+  writing-mode: vertical-rl;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 9pt;
+  line-height: 1.85;
+  line-break: strict;
+  overflow-wrap: break-word;
+  text-align: justify;
+  text-spacing: auto;
+  orphans: 2;
+  widows: 2;
+}
+body { margin: 0; }
+h1 { font-size: 20pt; margin: 0 0 0 1.5em; }
+h2 {
+  break-before: page;
+  break-after: avoid;
+  font-size: 13pt;
+  line-height: 1.6;
+  margin: 0 0 0 1.5em;
+}
+h3 { font-size: 11pt; break-after: avoid; }
+p { margin: 0; text-indent: 1em; }
+/* Blank Markdown lines separate paragraphs, without large Western paragraph gaps. */
+em { font-style: normal; }
+ruby { ruby-align: center; }
+rt { font-size: 0.5em; }
+hr { border: 0; margin: 1em; }
+hr::after { content: '＊　＊　＊'; }
+.tcy { text-combine-upright: all; }
+a { color: inherit; text-decoration: none; }

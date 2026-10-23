@@ -44,3 +44,13 @@
 5. 構造と感情を再調整して全幕へ拡張する。
 
 仕様変更では、数理的な**制約**と、あくまで**仮説・作劇案**である部分を区別して更新する。
+
+## 小説をPDFにする
+
+`novels/` 直下のMarkdown原稿を `main` に保存すると、GitHub Actionsが作品ごとの縦書きPDFを自動生成します。
+
+**[Actions → 小説PDF](https://github.com/ffuwa564-gif/novelogic/actions/workflows/pdf.yml) → 成功した実行 → Artifacts → novel-pdfs** からダウンロードできます。
+
+文庫サイズ（A6）、日本語明朝体、章ごとの改ページ、ルビ、ページ番号に対応。手元では `npm ci` → `npm run build` で生成します。
+
+詳しい操作・原稿の書き方・方式の選定根拠は [PDF生成ガイド](docs/PDF.md) を参照してください。

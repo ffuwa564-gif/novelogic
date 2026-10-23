@@ -1,0 +1,30 @@
+{
+  "name": "novelogic",
+  "version": "1.0.0",
+  "description": "日本語小説の Markdown を縦書き PDF に組版する Novelogic",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "vivliostyle build",
+    "preview": "vivliostyle preview",
+    "verify": "node scripts/verify-pdf.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffuwa564-gif/novelogic.git"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ffuwa564-gif/novelogic/issues"
+  },
+  "homepage": "https://github.com/ffuwa564-gif/novelogic#readme",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@fontsource/noto-serif-jp": "5.3.1",
+    "@vivliostyle/cli": "11.4.0"
+  }
+}

@@ -1,0 +1,38 @@
+name: 小説PDF
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pdf-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: PDF検証ツール
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: 全作品をPDF化
+        run: npm run build
+      - name: 日本語テキスト・フォント埋め込み・用紙寸法を検証
+        run: npm run verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: novel-pdfs
+          path: dist/*.pdf
+          if-no-files-found: error
+          retention-days: 30

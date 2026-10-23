@@ -1,0 +1,4 @@
+node_modules/
+dist/
+.vivliostyle/
+.DS_Store
